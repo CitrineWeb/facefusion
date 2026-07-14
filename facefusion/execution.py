@@ -39,7 +39,8 @@ def create_inference_providers(execution_device_id : int, execution_providers : 
 			inference_providers.append((facefusion.choices.execution_provider_set.get(execution_provider),
 			{
 				'device_id': execution_device_id,
-				'cudnn_conv_algo_search': resolve_cudnn_conv_algo_search()
+				'cudnn_conv_algo_search': resolve_cudnn_conv_algo_search(),
+				'arena_extend_strategy': 'kSameAsRequested'
 			}))
 
 		if execution_provider == 'tensorrt':
