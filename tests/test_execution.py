@@ -16,7 +16,8 @@ def test_create_inference_providers() -> None:
 		('CUDAExecutionProvider',
 		{
 			'device_id': 1,
-			'cudnn_conv_algo_search': 'EXHAUSTIVE'
+			'cudnn_conv_algo_search': 'EXHAUSTIVE',
+			'arena_extend_strategy': 'kSameAsRequested'
 		}),
 		'CPUExecutionProvider'
 	]
