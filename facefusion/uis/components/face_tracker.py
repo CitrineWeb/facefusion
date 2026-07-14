@@ -30,3 +30,8 @@ def listen() -> None:
 
 def update_face_tracker_score(face_tracker_score : Score) -> None:
 	state_manager.set_item('face_tracker_score', face_tracker_score)
+
+	if face_tracker_score == 0:
+		state_manager.set_item('target_frame_amount', 0)
+	else:
+		state_manager.set_item('target_frame_amount', 5)
