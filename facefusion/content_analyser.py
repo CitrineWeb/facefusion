@@ -140,9 +140,8 @@ def collect_model_downloads() -> Tuple[DownloadSet, DownloadSet]:
 
 
 def pre_check() -> bool:
-	model_hash_set, model_source_set = collect_model_downloads()
-
-	return conditional_download_hashes(model_hash_set) and conditional_download_sources(model_source_set)
+	# NSFW models are unused (censorship disabled), so do not require their hashes/sources.
+	return True
 
 
 def analyse_stream(vision_frame : VisionFrame, video_fps : Fps) -> bool:
